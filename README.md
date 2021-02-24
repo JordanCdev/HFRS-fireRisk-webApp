@@ -10,4 +10,4 @@ is ideal as usability is strong.
 The ML model uses ensemble learning methods such as AdaBoost. ....
 
 Technologies used:
-- Flask, SQLAlchemy
+- Flask, SQLAlchemy, HMTL, SCSS, JS, Python
