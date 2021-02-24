@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+    
+    {% block title %}Home{% endblock %}
+
+    {% block content %}
+        <img src="{{ url_for('static', filename='/img/HFRS_logo.png')}}">
+        <h1 align ="center">Home</h1>
+        <br>
+        <h3 align="center">Notes</h3>
+        <ul class="list-group list-group-flush" id="notes">
+            {% for note in user.notes %}
+            <li class="list-group-item">{{ note.data }}
+                <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </li>
+            {% endfor %}
+        </ul>
+        <form method="POST">
+            <textarea name="note" id="note" class="form-control"></textarea>
+            <br>
+            <div align="center">
+                <button type="submit" class="btn btn-primary">Add Note</button>
+            </div>
+        </form>
+    {% endblock %}
