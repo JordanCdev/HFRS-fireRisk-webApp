@@ -14,3 +14,9 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(64))
     firstName = db.Column(db.String(32))
     notes = db.relationship('Note')
+
+class Predictions(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    ORGINISATION = db.Column(db.String(64), unique=True)
+    UPRN = db.Column(db.Integer, unique=True)
+    y_test = db.Column(db.Integer)

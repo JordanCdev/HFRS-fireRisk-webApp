@@ -11,3 +11,10 @@ The ML model uses ensemble learning methods such as AdaBoost. ....
 
 Technologies used:
 - Flask, SQLAlchemy, HMTL, SCSS, JS, Python
+
+
+
+
+
+To note;
+Due to lack of developer experience this solution has been partially done following a online tutorial: https://www.youtube.com/watch?v=dam0GPOAvVI&t=5759s&ab_channel=TechWithTim
