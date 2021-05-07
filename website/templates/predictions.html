@@ -13,24 +13,20 @@
 </form>
 <p></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Organisation</th>
-      <th>UPRN</th>
-      <th>Risk</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for item in data %}
-    <tr>
-      <td>{{item.id}}</td>
-      <td>{{item.Organisation}}</td>
-      <td>{{item.UPRN}}</td>
-      <td>{{item.Risk}}</td>
-    </tr>
-  </tbody>
+<table id="table_results">
+  <tr>
+    <th>ID</th>
+    <th>Organisation</th>
+    <th>UPRN</th>
+    <th>Risk</th>
+  </tr>
+  {% for item in data %}
+  <tr>
+    <td>{{item.id}}</td>
+    <td>{{item.Organisation}}</td>
+    <td>{{item.UPRN}}</td>
+    <td>{{item.Risk}}</td>
+  </tr>
+  {% endfor %}
 </table>
-{% endfor %}
 {% endblock %}
