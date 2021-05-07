@@ -5,11 +5,26 @@
     height: auto;
 }
 
+.center-block {
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+}
+
 #align{
   align-self: center;
   text-align: center;
 }
 
+.left_align{
+  top: 30%;
+  left: 50px;
+}
+
+#spacing{
+  padding-right: 20%;
+  font-family: Arial, Helvetica, sans-serif;
+}
 #myInput {
     background-image: url('../img/search2.png'); /* Add a search icon to input */
     background-size: 20px;

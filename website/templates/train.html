@@ -1,17 +1,19 @@
 {% extends "base.html" %}
-    
-    {% block title %}Fire Risk Model{% endblock %}
 
-    {% block content %} <!--Style has already been set outside in base-->
-        <h1 align ="center">Fire Risk Model</h1>
-        <br>
-            <div align="center">
-            {%if data == 0 %}
-            <h1>Setosa</h1>
-            <img src="{{ url_for('static', filename='/img/setosa.jpeg')}}">
-            {%else%}
-            <h1>Versicolor</h1>
-            <img src="{{ url_for('static', filename='/img/versicolor.jpg')}}"></div>
-            {%endif%}
-            </div>
-    {% endblock %}
+{% block title %}Fire Risk Model{% endblock %}
+
+{% block content %}
+<!--Style has already been set outside in base-->
+<h1 align="center">Fire Risk Model</h1>
+<br>
+<div class="container" style="margin:auto;max-width:600px">
+
+    <div class="row">
+        <div class="center-block">
+            <a class="btn btn-primary">Download</a>
+            <a class="btn btn-primary">Upload</a>
+            <a class="btn btn-primary">Train</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

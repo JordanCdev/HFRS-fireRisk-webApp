@@ -70,7 +70,7 @@ def predictions():
         conn.commit()
         data = cur.fetchall()
         print(data)
-        if len(data) == 0 and predictions == 'all':
+        if len(data) == 0 and predictions == 'all' or predictions == '':
             cur.execute("SELECT * FROM predictions")
             conn.commit()
             data = cur.fetchall()

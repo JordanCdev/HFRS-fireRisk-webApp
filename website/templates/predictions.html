@@ -4,6 +4,7 @@
 
 {% block content %}
 <!--Style has already been set outside in base-->
+<br>
 <h1 align="center">Fire Risk Model</h1>
 <br>
 <form class="example" method="post" action="" style="margin:auto;max-width:600px">
@@ -13,6 +14,18 @@
 </form>
 <p></p>
 
+<div style="margin:auto;max-width:605px">
+  <br>
+  <p><u>Filter by Risk</u></p>
+  <input type="radio", name="filter_risk" , value="risk_1">
+  <label id="spacing" for="level_1">Level 1 - Low</label>
+  <input type="radio" name="filter_risk" , value="risk_2">
+  <label id="spacing" for="level_2">Level 2 - Med</label>
+  <input type="radio" name="filter_risk" , value="risk_3">
+  <label for="level_3">Level 3 - High</label>
+  <br><br><br><br>
+
+<h2 style="text-align: left;"><u>Results</u></h2>
 <table id="table_results">
   <tr>
     <th>ID</th>
@@ -30,3 +43,4 @@
   {% endfor %}
 </table>
 {% endblock %}
+</div>
