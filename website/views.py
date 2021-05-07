@@ -1,11 +1,14 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
+from flask_mysqldb import MySQL
 from .models import Note
 from . import db
+from . import mysql
 import json
 import pickle
 import numpy as np
 import csv
+
 
 views = Blueprint('views', __name__)
 classifier = pickle.load(open('website/iris.pkl', 'rb'))
@@ -54,4 +57,22 @@ def train():
 @views.route('/predictions', methods=['GET', 'POST'])
 @login_required
 def predictions():
-    return render_template('predictions.html', user=current_user)
+    conn = mysql.connection
+    cur = conn.cursor()
+    #cur.execute('''CREATE TABLE predictions (id int(20), Organisation VARCHAR(200), UPRN int(20), Risk int(10), PRIMARY KEY(id))''')
+    #cur.execute('''SELECT * FROM predictions''')
+    #results = cur.fetchall()
+    #print(results)
+    
+    if request.method == 'POST':
+        predictions = request.form['predictions']
+        cur.execute('''select * from predictions where Organisation LIKE %s''', [predictions])
+        conn.commit()
+        data = cur.fetchall()
+        print(data)
+        if len(data) == 0 and predictions == 'all':
+            cur.execute("SELECT * FROM predictions")
+            conn.commit()
+            data = cur.fetchall()
+        return render_template("predictions.html", data=data, user=current_user)
+    return render_template("predictions.html", user=current_user)
