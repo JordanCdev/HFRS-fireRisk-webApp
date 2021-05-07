@@ -7,13 +7,55 @@
 <h1 align="center">Fire Risk Model</h1>
 <br>
 <div class="container" style="margin:auto;max-width:600px">
+    <h3 style="text-align: left;"><u>Instructions</u></h3>
+    <ol style="font-size: 20px;">
+        <li>Ensure required files are uploaded.</li>
+        <li>Check all features (columns) exists in datasets.</li>
+        <li>Check against existing files (click download).</li>
+    </ol>
+    <div class="center-block">
+        <a class="btn btn-primary">Download</a>
+    </div><br><br>
 
-    <div class="row">
+    <h3 style="text-align: left;"><u>Uploads</u></h3>
+    <table id="table_results">
+        <tr>
+            <th>Filename</th>
+        </tr>
+        {% for item in data %}
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="center-block">
+        <a class="btn btn-primary">Upload</a>
+    </div><br><br>
+
+    <div style="float:left;">
+        <h3 style="text-align:left;"><u>Checklist</u></h3>
+        <label class="checklist">All files are upload.
+            <input type="checkbox" checked="checked">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checklist">All features exist.
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checklist">Files checked agaisnt old files.
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checklist">Appropriate data pre-processing complete.
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <div style="float:right;">
+        <h3 style="text-align:right; display:inline"><u>Train</u></h3>
         <div class="center-block">
-            <a class="btn btn-primary">Download</a>
-            <a class="btn btn-primary">Upload</a>
-            <a class="btn btn-primary">Train</a>
+            <a class="btn btn-primary">Train Model</a>
         </div>
     </div>
+</div>
 </div>
 {% endblock %}
