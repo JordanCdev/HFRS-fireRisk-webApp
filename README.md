@@ -17,4 +17,4 @@ Technologies used:
 
 
 To note;
-Due to lack of developer experience this solution has been partially done following a online tutorial: https://www.youtube.com/watch?v=dam0GPOAvVI&t=5759s&ab_channel=TechWithTim
+this solution has been partially done following a online tutorial: https://www.youtube.com/watch?v=dam0GPOAvVI&t=5759s&ab_channel=TechWithTim
